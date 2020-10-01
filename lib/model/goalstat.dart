@@ -8,28 +8,4 @@ Widget goalStat(int expandedTime, int homeGoal, int awayGoal) {
   if (away == null) away = 0;
   if (elapsed == null) elapsed = 0;
   return Expanded(
-    child: Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        Text(
-          "${elapsed}'",
-          style: TextStyle(
-            fontSize: 30.0,
-          ),
-        ),
-        Expanded(
-          child: Center(
-            child: Text(
-              "${home} - ${away}",
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 36.0,
-              ),
-            ),
-          ),
-        )
-      ],
-    ),
-  );
-}
+
