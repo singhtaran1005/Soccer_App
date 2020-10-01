@@ -8,4 +8,4 @@ Widget goalStat(int expandedTime, int homeGoal, int awayGoal) {
   if (away == null) away = 0;
   if (elapsed == null) elapsed = 0;
   return Expanded(
-    
+

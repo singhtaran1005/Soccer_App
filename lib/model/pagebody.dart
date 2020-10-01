@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:soccer_app/model/goalstat.dart';
+import 'package:soccer_app/model/matchstat.dart';
 import 'package:soccer_app/model/matchtile.dart';
+
 import 'soccermodel.dart';
 
-Widget pagebody(List<SoccerMatch> allmatches) {
+Widget pageBody(List<SoccerMatch> allmatches) {
   return Column(
     children: [
       Expanded(
@@ -13,6 +16,14 @@ Widget pagebody(List<SoccerMatch> allmatches) {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                teamStat("Local Team", allmatches[0].home.logUrl,
+                    allmatches[0].home.name),
+                goalStat(allmatches[0].fixture.status.elapsedTime,
+                    allmatches[0].goal.home, allmatches[0].goal.away),
+                teamStat("Visitor Team", allmatches[0].away.logUrl,
+                    allmatches[0].away.name),
+              ],
             ),
           ),
         ),
@@ -46,7 +57,6 @@ Widget pagebody(List<SoccerMatch> allmatches) {
                     itemCount: allmatches.length,
                     itemBuilder: (context, index) {
                       return matchTile(allmatches[index]);
-//match tile to be updated with another dart file
                     },
                   ),
                 )
